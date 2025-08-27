@@ -32,12 +32,9 @@ public class CardDeliveryTest {
         String planningDate = generateDate(4, "dd.MM.yyyy");
         SelenideElement form = $("form");
         form.$("[data-test-id='city'] input").setValue("Москва");
-        //form.$("[data-test-id='date'] input")
-               // .press(Keys.chord(Keys.SHIFT, Keys.HOME, Keys.BACK_SPACE))
-              //  .setValue(planningDate);
-        form.$ ("[data-test-id='date'] input")
-                .sendKeys(Keys.SHIFT, Keys.HOME,Keys.BACK_SPACE);
-        form.$ ("[data-test-id='date'] input").setValue(planningDate);
+        form.$("[data-test-id='date'] input")
+                .press(Keys.chord(Keys.SHIFT, Keys.HOME, Keys.BACK_SPACE))
+                .setValue(planningDate);
         form.$("[data-test-id='name'] input").setValue("Иванов Иван");
         form.$("[data-test-id='phone'] input").setValue("+79990009999");
         form.$("[data-test-id='agreement']").click();
